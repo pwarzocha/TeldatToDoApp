@@ -1,0 +1,79 @@
+﻿@* @model TeldatTaskApp.Models.UserTaskViewModel *@
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h2>Hello User @ViewBag.User</h2>
+
+
+
+<div class="container-fluid">
+    <button type="button" class="btn btn-primary getUserTasks">Get Tasks</button>
+    <button type="button" class="btn btn-primary openModalAddUser">Add Tasks</button>
+
+    <input id="getDate" type="date" value="@ViewBag.Date" />
+    <table id="tasksTable" class="display">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Date</td>
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="editRowData" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Row Data</h2>
+                <span class="close" id="closeEditModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                <table class="modalRowDataTable">
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Description</td>
+                            <td>Date</td>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td><input id="editRowName" /></td>
+                            <td><input id="editRowDescription" /></td>
+                            <td><input id="editRowDate" type="date" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <div class="container">
+                    <button class="btn btn-primary editUserTask" id="editUserTask">Edit User Task</button>
+                </div>
+                <div class="container">
+                    <button class="btn btn-primary addUserTask" id="addUserTask">Add User Task</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="~/js/Index.js" asp-append-version="true"></script>
+
+
+
+
+
